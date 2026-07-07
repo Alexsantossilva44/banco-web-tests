@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --expose URL=http://localhost:4000",
-    "test-prod": "cypress run --expose URL=http://www.juliodelima.com.br",
+    "test": "cypress run",
     "cy:headed": "cypress run --headed",
     "cy:open": "cypress open"
   },
