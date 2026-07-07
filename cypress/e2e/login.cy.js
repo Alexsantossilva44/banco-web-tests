@@ -4,15 +4,18 @@ describe('Login', () => {
 
     // Arrange
     cy.visit('http://localhost:4000')
+    cy.screenshot('após-visitar-a-página')
 
   })
 
-  it('Login com dados válidos deve permitir entrada no sistema', () => {
+  it.only('Login com dados válidos deve permitir entrada no sistema', () => {
 
     // Act
     cy.get('#username').click().type('julio.lima')
     cy.get('#senha').click().type('123456')
-    cy.get('#login-section > .btn').click()
+    cy.screenshot('após-preencher-os-dados-validos')
+    cy.contains('button', 'Entrar').click()
+    cy.screenshot('após-clicar-no-botão-entrar')
 
     // Assert
     cy.contains('h4', 'Realizar Transferência').should('be.visible')
