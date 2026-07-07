@@ -9,23 +9,23 @@ describe('Login', () => {
   })
 
   it('Login com dados válidos deve permitir entrada no sistema', () => {
-
     // Act
-    cy.get('#username').click().type('julio.lima')
-    cy.get('#senha').click().type('123456')
-    cy.screenshot('após-preencher-os-dados-validos')
+    cy.fixture('credenciais').then(cred => {
+      cy.get('#username').click().type(cred.valida.usuario)
+      cy.get('#senha').click().type(cred.valida.senha)
+    })
     cy.contains('button', 'Entrar').click()
-    cy.screenshot('após-clicar-no-botão-entrar')
 
     // Assert
     cy.contains('h4', 'Realizar Transferência').should('be.visible')
   })
 
   it('Login com dados inválidos deve exibir mensagem de erro', () => {
-
     // Act
-    cy.get('#username').click().type('julio.lima')
-    cy.get('#senha').click().type('654321')
+    cy.fixture('credenciais').then(cred => {
+      cy.get('#username').click().type(cred.invalida.usuario)
+      cy.get('#senha').click().type(cred.invalida.senha)
+    })
     cy.get('#login-section > .btn').click()
 
     // Assert
