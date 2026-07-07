@@ -144,9 +144,13 @@ vite.config.ts.timestamp-*
 
 # Cypress files
 cypress/screenshots
+cypress/videos
+cypress/reports
 
 # Pasta de demonstração (não faz parte da suíte real)
 susporte-2/
 
 # Artefatos de sessão do Playwright MCP
 .playwright-mcp/
+
+

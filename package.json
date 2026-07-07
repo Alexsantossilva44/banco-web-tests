@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Alexsantossilva44/banco-web-tests#readme",
   "devDependencies": {
-    "cypress": "^15.18.0"
+    "cypress": "^15.18.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
