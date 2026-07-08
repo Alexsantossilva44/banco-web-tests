@@ -25,8 +25,12 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // Comandos customizados para interagir com a aplicação
-import './commands/common'
+import './commands/combobox'
+import './commands/toast'
+import './commands/overwrite'
 
 // Comandos customizados para interagir com funcionalidades específicas da aplicação
-import './commands/transferencia'
 import './commands/login'
+import './commands/transferencia'
+import './commands/session'
+import './commands/query'

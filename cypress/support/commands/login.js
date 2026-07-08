@@ -1,15 +1,6 @@
-Cypress.Commands.add('fazerLoginComCredenciaisValidas', () => {
-    cy.fixture('credenciais').then(cred => {
-        cy.get('#username').click().type(cred.valida.usuario)
-        cy.get('#senha').click().type(cred.valida.senha)
-    })
-    cy.contains('button', 'Entrar').click()
-})
-
-Cypress.Commands.add('fazerLoginComCredenciaisInvalidas', () => {
-    cy.fixture('credenciais').then(cred => {
-        cy.get('#username').click().type(cred.invalida.usuario)
-        cy.get('#senha').click().type(cred.invalida.senha)
-    })
+// Padrão: comando unificado e parametrizado, em vez de um comando por cenário
+Cypress.Commands.add('fazerLogin', (usuario, senha) => {
+    cy.get('#username').click().type(usuario)
+    cy.get('#senha').click().type(senha)
     cy.contains('button', 'Entrar').click()
 })
